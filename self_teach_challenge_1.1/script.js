@@ -73,8 +73,6 @@ const COUNTDOWN = () => {
             minutesInput.value = Math.floor(Number(countdownSeconds/60));
             secondsInput.value = Number(countdownSeconds%60);
             oneNumber();
-            console.log(countdownSeconds)
-            console.log(secondsInput.value.length)
             return
         }
         alert('lejárt az idő')
