@@ -44,14 +44,17 @@ function changeButtonValue() {
 }
 
 function oneNumber() {
+    if (minutesInput.value.length > 2 || secondsInput.value.lenght > 2) {
+        alert('Helyesen add meg az időt mm:ss')
+        clearInterval(interval)
+    }
     if (minutesInput.value.length < 2) {
         minutesInput.value = "0" + minutesInput.value;
     };
     if (secondsInput.value.length < 2) {
         secondsInput.value = "0" + secondsInput.value;
     };
-    if (countdownSeconds > 3599) {
-        alert('Helyesen add meg az időt')
+    if (countdownSeconds > 5999) {
         clearInterval(interval)
     };
 }
@@ -73,6 +76,8 @@ const COUNTDOWN = () => {
             minutesInput.value = Math.floor(Number(countdownSeconds/60));
             secondsInput.value = Number(countdownSeconds%60);
             oneNumber();
+            console.log(countdownSeconds)
+            console.log(secondsInput.value.length)
             return
         }
         alert('lejárt az idő')
