@@ -21,7 +21,7 @@ body {
     margin: auto;
     justify-content: center;
     align-items: center;
-    background: radial-gradient(circle, #E94B3CFF, #2D2926FF);
+    background: radial-gradient(circle, #E94B3C, #2D2926);
 }
 
 .container {

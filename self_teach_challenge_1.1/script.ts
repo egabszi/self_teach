@@ -1,48 +1,48 @@
-"use strict";
-let interval;
-let countdownSeconds;
-let minutesInput = document.getElementById('minutes');
-let secondsInput = document.getElementById('seconds');
+let interval: NodeJS.Timer | null;
+let countdownSeconds: number | null;
+let minutesInput = document.getElementById('minutes') as HTMLInputElement;
+let secondsInput = document.getElementById('seconds') as HTMLInputElement;
 let isRunning = true;
 let isDisabled = true;
+
 function stopCountdown() {
     if (interval || interval === 0) {
-        clearInterval(interval);
+        clearInterval(interval)
         interval = null;
     }
-}
-;
+};
+
 function countdownSettings() {
     if (isDisabled) {
         minutesInput.disabled = false;
         secondsInput.disabled = false;
         isDisabled = false;
-    }
-    else {
+    } else {
         minutesInput.disabled = true;
         secondsInput.disabled = true;
         isDisabled = true;
     }
 }
+
 function changeButtonValue() {
-    let button = document.getElementById('timer-toggle-button');
+    let button = document.getElementById('timer-toggle-button') as HTMLButtonElement;
     if (button === null) {
-        return;
+        return
     }
     if (isRunning) {
-        button.textContent = 'STOP';
+        button.textContent = 'STOP'
         isRunning = false;
-    }
-    else {
-        button.textContent = 'START';
+    } else {
+        button.textContent = 'START'
         isRunning = true;
     }
     minutesInput.disabled = true;
     secondsInput.disabled = true;
 }
-function formatTimerNumbers(minutes, seconds) {
-    let minutesString = minutes.toString();
-    let secondsString = seconds.toString();
+
+function formatTimerNumbers(minutes: number, seconds: number) {
+    let minutesString = minutes.toString()
+    let secondsString = seconds.toString()
     //let maxTimerSeconds = 5999;
     /*if (minutes > 60 || seconds > 2) {
         alert('Helyesen add meg az időt mm:ss')
@@ -50,39 +50,39 @@ function formatTimerNumbers(minutes, seconds) {
     }*/
     if (minutes < 10) {
         minutesString = "0" + minutes;
-    }
-    ;
+    };
     if (seconds < 10) {
         secondsString = "0" + seconds;
-    }
-    ;
+    };
     /*if (countdownSeconds > maxTimerSeconds) {
         clearInterval(interval)
     };*/
-    return `${minutesString}:${secondsString}`;
+    return `${minutesString}:${secondsString}`
 }
+
 const COUNTDOWN = () => {
     countdownSeconds = Number(minutesInput.value) * 60 + Number(secondsInput.value);
     if (interval || interval === 0) {
-        stopCountdown();
-        return;
+        stopCountdown()
+        return
     }
     const INTERVAL = 1000;
     if (countdownSeconds === null) {
-        return;
+        return
     }
     interval = setInterval(() => {
         if (!countdownSeconds || countdownSeconds <= 0) {
-            alert('lejárt az idő');
-            stopCountdown();
-            return;
+            alert('lejárt az idő')
+            stopCountdown()
+            return
         }
         countdownSeconds = countdownSeconds - 1;
         let timerString = formatTimerNumbers(Math.floor(countdownSeconds / 60), countdownSeconds % 60);
         minutesInput.value = timerString.split(':')[0];
         secondsInput.value = timerString.split(':')[1];
-    }, INTERVAL);
+    }, INTERVAL)
 };
+
 /* TODO
 - 1 start, stop gomb
 - 1 beállítások gomb
@@ -92,4 +92,5 @@ const COUNTDOWN = () => {
   - változó aminek az értékét csökkentem
   - setInterval amivel csökkentem
 */
+
 //export default formatTimerNumbers
