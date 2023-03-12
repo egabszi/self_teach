@@ -3,20 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible"
-        content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<input type="text">
-<input type="text">
-<button onclick="COUNTDOWN()" id="timer-toggle-button">START</button>
-<button>BEÁLLÍTÁS</button>
+    <div class="container">
+        <div class="input_div">
+            <input disabled type="text" id="minutes" value="15">
+            <h1>:</h1>
+            <input disabled type="text" id="seconds" value="00">
+        </div>
+        <div class="button_div">
+            <button type="button" onclick="COUNTDOWN(); changeButtonValue()" id="timer-toggle-button" value="START">START</button>
+            <button type="button" onclick="countdownSettings()" id="timer-settings-button" value="BEÁLLÍTÁSOK">BEÁLLÍTÁSOK</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 
 </html>
