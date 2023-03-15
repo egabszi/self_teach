@@ -93,4 +93,4 @@ const COUNTDOWN = () => {
   - setInterval amivel csökkentem
 */
 
-//export default formatTimerNumbers
+module.exports = formatTimerNumbers;

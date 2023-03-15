@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let interval;
 let countdownSeconds;
 let minutesInput = document.getElementById('minutes');
@@ -41,8 +42,8 @@ function changeButtonValue() {
     secondsInput.disabled = true;
 }
 function formatTimerNumbers(minutes, seconds) {
-    let minutesString = minutes.toString();
-    let secondsString = seconds.toString();
+    let minutesString = minutes !== undefined ? minutes.toString() : '00';
+    let secondsString = seconds !== undefined ? seconds.toString() : '00';
     //let maxTimerSeconds = 5999;
     /*if (minutes > 60 || seconds > 2) {
         alert('Helyesen add meg az időt mm:ss')
@@ -83,6 +84,7 @@ const COUNTDOWN = () => {
         secondsInput.value = timerString.split(':')[1];
     }, INTERVAL);
 };
+
 /* TODO
 - 1 start, stop gomb
 - 1 beállítások gomb
@@ -92,4 +94,5 @@ const COUNTDOWN = () => {
   - változó aminek az értékét csökkentem
   - setInterval amivel csökkentem
 */
-//export default formatTimerNumbers
+module.exports = formatTimerNumbers;
+
