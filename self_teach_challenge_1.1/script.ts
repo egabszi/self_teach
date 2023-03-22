@@ -41,8 +41,8 @@ function changeButtonValue() {
 }
 
 function formatTimerNumbers(minutes: number, seconds: number) {
-    let minutesString = minutes.toString()
-    let secondsString = seconds.toString()
+    let minutesString = minutes !== undefined ? minutes.toString() : '00';
+    let secondsString = seconds !== undefined ? seconds.toString() : '00';
     //let maxTimerSeconds = 5999;
     /*if (minutes > 60 || seconds > 2) {
         alert('Helyesen add meg az időt mm:ss')

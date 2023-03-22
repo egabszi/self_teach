@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 - E-Commerce Component || Advent of JavaScript</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+
+<body>
+  <div class="wrapper menu">
+    <div class="panel">
+      <h1>To Go Menu</h1>
+      <ul id="menulist" class="menu">
+        <!-- <li>
+          <div class="plate">
+            <img src="./src/images/plate__french-fries.png" alt="French Fries" class="plate" />
+          </div>
+          <div class="content">
+            <p class="menu-item">French Fries with Ketchup</p>
+            <p class="price">$2.23</p>
+            <button class="in-cart" onclick=makeCartItem(French Fries)>
+              <img src="./src/images/check.svg" alt="Check" />
+              In Cart
+            </button>
+          </div>
+        </li>  -->
+      </ul>
+    </div>
+
+    <div class="panel cart">
+      <h1>Your Cart</h1>
+      <!-- <p class="empty">Your cart is empty.</p> -->
+
+      <ul id="cartList" class="cart-summary">
+
+        <!-- item 1 -->
+   <!--      <li>
+          <div class="plate">
+            <img src="./src/images/plate__fish-sticks-fries.png" alt="Fish Sticks and Fries" class="plate" />
+            <div class="quantity">1</div>
+          </div>
+          <div class="content">
+            <p class="menu-item">Fish Sticks and Fries</p>
+            <p class="price">$6.34</p>
+          </div>
+          <div class="quantity__wrapper">
+            <button class="decrease">
+              <img src="./src/images/chevron.svg" />
+            </button>
+            <div class="quantity">1</div>
+            <button class="increase">
+              <img src="./src/images/chevron.svg" />
+            </button>
+          </div>
+          <div class="subtotal">
+            $6.34
+          </div>
+        </li> -->
+      </ul>
+
+      <div class="totals">
+        <div class="line-item">
+          <div class="label">Subtotal:</div>
+          <div class="amount price subtotal">$10.80</div>
+        </div>
+        <div class="line-item">
+          <div class="label">Tax:</div>
+          <div class="amount price tax">$1.05</div>
+        </div>
+        <div class="line-item total">
+          <div class="label">Total:</div>
+          <div class="amount price total">$11.85</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
